@@ -1,0 +1,14 @@
+# Backend
+target/
+uploads/
+*.log
+.env
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
