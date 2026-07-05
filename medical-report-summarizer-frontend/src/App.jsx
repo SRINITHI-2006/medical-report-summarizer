@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import { useAuth } from './context/AuthContext'
 import PrivateRoute from './components/PrivateRoute'
 import Layout from './components/Layout'
+import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
@@ -19,6 +20,7 @@ const App = () => {
 
   return (
     <Routes>
+      <Route path="/" element={isAuthenticated() ? <Navigate to="/dashboard" /> : <Home />} />
       <Route path="/login" element={isAuthenticated() ? <Navigate to="/dashboard" /> : <Login />} />
       <Route path="/register" element={isAuthenticated() ? <Navigate to="/dashboard" /> : <Register />} />
 
@@ -33,7 +35,7 @@ const App = () => {
         </Route>
       </Route>
 
-      <Route path="*" element={<Navigate to="/dashboard" replace />} />
+      <Route path="*" element={<Navigate to={isAuthenticated() ? '/dashboard' : '/'} replace />} />
     </Routes>
   )
 }

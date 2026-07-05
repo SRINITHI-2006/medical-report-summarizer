@@ -5,6 +5,7 @@ import { FaEye, FaMagic, FaTrash, FaSearch } from 'react-icons/fa'
 import { reportService, summaryService } from '../services/reportService'
 import LoadingSpinner from '../components/LoadingSpinner'
 import Pagination from '../components/Pagination'
+import './Home.css'
 
 const History = () => {
   const [reports, setReports] = useState([])
